@@ -1,0 +1,580 @@
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #050505;
+    color: white;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 0, 0, 0.15),
+            transparent 70%);
+    z-index: -1;
+}
+
+.container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+/* ================= SCREEN ================= */
+
+.screen {
+    width: 100%;
+    max-width: 500px;
+
+    animation: fade 0.4s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================= TITLE ================= */
+
+.title {
+    font-size: 65px;
+    text-align: center;
+
+    color: #ff1f1f;
+
+    text-shadow:
+        0 0 10px red,
+        0 0 20px red;
+}
+
+.title.small {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 0, 0, 0.3);
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.2);
+}
+
+/* ================= INPUT ================= */
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    background: #111;
+
+    border: 1px solid #222;
+
+    border-radius: 14px;
+
+    color: white;
+    font-size: 16px;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+    width: 100%;
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #b80000;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: red;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 15px red;
+}
+
+/* ================= ROLE CARD ================= */
+
+.role-card {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 0, 0, 0.08);
+
+    border:
+        1px solid rgba(255, 0, 0, 0.4);
+
+    border-radius: 20px;
+
+    animation: glow 1.5s infinite;
+}
+
+.role-card img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border: 2px solid red;
+}
+
+#roleName {
+    font-size: 36px;
+    margin-top: 10px;
+
+    color: #ff2d2d;
+}
+
+#roleDesc {
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* ================= TIMER ================= */
+
+.timer {
+    font-size: 80px;
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #ff2d2d;
+
+    text-shadow:
+        0 0 15px red;
+}
+
+/* ================= TEXT ================= */
+
+.voteText,
+.howText {
+
+    color: #ccc;
+
+    line-height: 1.8;
+
+    max-height: 350px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+
+}
+
+/* CUSTOM SCROLLBAR */
+
+.howText::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+.howText::-webkit-scrollbar-track {
+
+    background: #111;
+
+    border-radius: 10px;
+
+}
+
+.howText::-webkit-scrollbar-thumb {
+
+    background: red;
+
+    border-radius: 10px;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes glow {
+
+    0% {
+        box-shadow:
+            0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(255, 0, 0, 0.8);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+}
+
+@keyframes fade {
+
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+    .container {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 15px;
+
+    }
+
+    .screen {
+
+        width: 100%;
+
+        max-width: 380px;
+
+    }
+
+    .title {
+
+        font-size: 48px;
+
+    }
+
+    .title.small {
+
+        font-size: 32px;
+
+    }
+
+    .card {
+
+        padding: 22px;
+
+    }
+
+    input {
+
+        padding: 12px;
+
+        font-size: 15px;
+
+    }
+
+    button {
+
+        padding: 14px;
+
+        font-size: 15px;
+
+    }
+
+    .role-card img {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+    #roleName {
+
+        font-size: 30px;
+
+    }
+
+    .timer {
+
+        font-size: 65px;
+
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: #050505;
+    color: white;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 0, 0, 0.15),
+            transparent 70%);
+
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 55px;
+    text-align: center;
+
+    color: #ff2222;
+
+    text-shadow:
+        0 0 15px red;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 0, 0, 0.3);
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    color: white;
+}
+
+button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 12px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #b80000;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: red;
+}
+
+.hidden {
+    display: none;
+}
+
+#playerList {
+    margin-top: 20px;
+}
+
+.player {
+    padding: 12px;
+
+    margin-top: 10px;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    border: 1px solid red;
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+    .container {
+
+        padding: 15px;
+
+
+    }
+
+    .screen {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+    .card {
+
+        padding: 18px;
+
+        border-radius: 20px;
+
+    }
+
+    .title {
+
+        font-size: 42px;
+
+    }
+
+    .title.small {
+
+        font-size: 28px;
+
+    }
+
+    input {
+
+        padding: 12px;
+
+        font-size: 15px;
+
+    }
+
+    button {
+
+        padding: 13px;
+
+        font-size: 15px;
+
+    }
+
+    .role-card img {
+
+        width: 70px;
+
+        height: 70px;
+
+    }
+
+    #roleName {
+
+        font-size: 28px;
+
+    }
+
+    .timer {
+
+        font-size: 60px;
+
+    }
+
+}
